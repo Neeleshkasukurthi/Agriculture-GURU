@@ -20,11 +20,11 @@
 			<div id="contact-form" class="right">
 				<h2>Contact Us</h2>
 
-        <form method="post">
-				<input type="text" class="field" placeholder="Your Name" name="name" required>
-				<input type="text" class="field" placeholder="Your Email" name="email" required>
-				<input type="text" class="field" placeholder="Phone" name="number" required>
-				<textarea placeholder="Message" class="field" name="message" required></textarea>
+        <form method="post" id="contact-form">
+				<input type="text" class="field" placeholder="Your Name" name="name" id="name" required>
+				<input type="text" class="field" placeholder="Your Email" name="email" id="email" required>
+				<input type="text" class="field" placeholder="Phone" name="number"  id="phone" required>
+				<textarea placeholder="Message" class="field" name="message" id="message" required></textarea>
 				<input type="submit" class="btn" name="submit" value="Send"/>
         </form>
 
@@ -64,6 +64,30 @@
 
 
 <!--JS filse-->
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBfpGKJe1kYuiwWS3bapq6YjO09OPVYEOU",
+    authDomain: "agricultureguru-50f2f.firebaseapp.com",
+    projectId: "agricultureguru-50f2f",
+    storageBucket: "agricultureguru-50f2f.appspot.com",
+    messagingSenderId: "447584018960",
+    appId: "1:447584018960:web:a9f6e4dabcc1e9c0f16095",
+    measurementId: "G-WVVWC2LWDJ"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 <script src="index.js"></script>
+<script src="contact.js"></script>
 </body>
 </html>
