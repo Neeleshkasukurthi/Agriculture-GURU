@@ -52,6 +52,14 @@
 
 <center>
 <div class="container">
+    <?php 
+    include "dbconnection.php";
+//    $sql = " Select * from Farmer_info order by Ideal_Profit DESC";
+   $stmt = $conn->prepare("Select * from Farmer_info order by Ideal_Profit DESC");
+			$stmt->execute();
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    ?>
+
     <h3>Your Analysis of data</h3>
     <div class="row">
         <div class="col-lg-6">
@@ -67,7 +75,7 @@
                                 <span class="widget-49-date-month">apr</span>
                             </div>
                             <div class="widget-49-meeting-info">
-                                <span class="widget-49-pro-title">Name of the best farmer</span>
+                                <span class="widget-49-pro-title">Name of the best farmer <?php $row['Name_of_Farmer'];  ?>    </span>
                             </div>
                         </div>
                         <ol class="widget-49-meeting-points">
